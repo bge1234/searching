@@ -5,9 +5,20 @@
     <title></title>
   </head>
   <body>
-    <input type="text" id="searchTerm">
-    <button id="searchTrigger">Search</button>
-    <br><br>
+    <input type="text" id="searchTerm" placeholder="Text to search">
+    <input type="text" id="searchExclusion" placeholder="Text to exclude">
+    <input type="number" id="prediction" placeholder="How many rows?">
+    <button id="searchTrigger">Search</button> (case insensitive)
+    <span id="winbox"></span>
+    <hr>
+    <input type="text" id="removeText" placeholder="Text to remove">
+    <button id="removeTrigger">Remove</button> (case sensitive!)
+    <hr>
+    <input type="text" id="findText" placeholder="Text to find">
+    <button id="findTrigger">Find</button> (case sensitive!)
+    <hr>
+    <button id="cleanTrigger">Wipe clean</button>
+    <hr>
     <table id="tabl" border="1" cellspacing="0" cellpadding="4">
         <tr>
             <th>
