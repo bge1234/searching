@@ -23,7 +23,7 @@ $("#searchTrigger").click(function() {
           $("#tabl").append("<tr><td><a href='http://reddit.com" + response["data"]["children"][i]["data"]["url"] + "'>" + response["data"]["children"][i]["data"]["title"] + "</a></td><td><img src=\"http:\/\/placehold.it/100x100\"></td><td>" + response["data"]["children"][i]["data"]["display_name"] + "</td></tr>");
         };
 
-        //Check predicitons against actual and dispay winbox
+        //Check predictions against actual and dispay winbox
         var predicted = parseInt($("#prediction").val());
         var actual = $('#tabl tr').length;
         console.log(actual);
