@@ -13,14 +13,14 @@ $("#searchTrigger").click(function() {
 
       for (var i = 0; i < response["data"]["children"].length; i++) {
         if(excl.length === 0)
-          $("#tabl").append("<tr><td>" + response["data"]["children"][i]["data"]["title"] + "</td><td><img src='" + response["data"]["children"][i]["data"]["header_img"] + "'></td><td>" + response["data"]["children"][i]["data"]["display_name"] + "</td></tr>");
+          $("#tabl").append("<tr><td><a href='http://reddit.com" + response["data"]["children"][i]["data"]["url"] + "'>" + response["data"]["children"][i]["data"]["title"] + "</a></td><td><img src='" + response["data"]["children"][i]["data"]["header_img"] + "'></td><td>" + response["data"]["children"][i]["data"]["display_name"] + "</td></tr>");
         else if (response["data"]["children"][i]["data"]["title"].toLowerCase().indexOf(excl.toLowerCase()) === -1)
           excl = "";
 
         //Replace non-existent images with placeholders.
         if(response["data"]["children"][i]["data"]["header_img"] === null) {
           $("tr:last-child").remove();
-          $("#tabl").append("<tr><td>" + response["data"]["children"][i]["data"]["title"] + "</td><td><img src=\"http:\/\/placehold.it/100x100\"></td><td>" + response["data"]["children"][i]["data"]["display_name"] + "</td></tr>");
+          $("#tabl").append("<tr><td><a href='http://reddit.com" + response["data"]["children"][i]["data"]["url"] + "'>" + response["data"]["children"][i]["data"]["title"] + "</a></td><td><img src=\"http:\/\/placehold.it/100x100\"></td><td>" + response["data"]["children"][i]["data"]["display_name"] + "</td></tr>");
         };
 
         //Check predicitons against actual and dispay winbox
